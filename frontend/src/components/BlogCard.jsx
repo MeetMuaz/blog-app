@@ -6,7 +6,6 @@ export default function BlogCard(props) {
     <div>
         <p>{data.title}</p>
         <p>{data.content}</p>
-        <p>{data.content}</p>
     </div>
   )
 }

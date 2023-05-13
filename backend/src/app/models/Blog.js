@@ -19,10 +19,8 @@ const blogSchema = new mongoose.Schema({
             ref: 'Comment'
         }
     ],
-    likes: {
-        type: Number,
-        default: 0,
-    }
-});
+},
+{ timestamps: true }
+);
 
 module.exports = mongoose.model('Blog', blogSchema);

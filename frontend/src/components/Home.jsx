@@ -9,7 +9,8 @@ export default function Home() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchAsyncAllBlogs());
-  }, [dispatch])
+  }, [dispatch]);
+
   return (
     <div>
       <BlogListing />

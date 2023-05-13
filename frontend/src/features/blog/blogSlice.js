@@ -4,20 +4,20 @@ import blogApi from '../../common/api/blogApi';
 export const fetchAsyncAllBlogs = createAsyncThunk(
     'blogs/fetchAsyncAllBlogs',
     async () => {
-        const res = await blogApi.get(
-            `/blog`
+        const response = await blogApi.get(
+            `read-all-blog`
         );
-        return res.data
+        return response.data
     }
 );
 
 export const fetchAsyncSingleBlog = createAsyncThunk(
     'blogs/fetchAsyncSingleBlog',
     async (id) => {
-        const res = await blogApi.get(
-            `/blog/${id}`
+        const response = await blogApi.get(
+            `read-one-blog/${id}`
         );
-        return res.data
+        return response.data
     }
 );
 

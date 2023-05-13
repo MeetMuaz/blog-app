@@ -7,13 +7,24 @@ import BlogCard from "./BlogCard";
 export default function BlogListing() {
   const blogs = useSelector(getAllBlogs);
   let renderBlogs = "";
-  renderBlogs = blogs.map((blog, index) => {
-    <BlogCard key={index} data={blog}/>
-  })
+
+  renderBlogs = 
+
+  <div>
+    {Object.keys(blogs).length === 0 ? (
+      <div>...Loading</div>
+    ) : (
+      blogs.message === "Blogs fetch successfully!" ? (
+        blogs.result.map((blog, index) => (
+          <BlogCard key={index} data={blog} />
+        ))
+        ) : (
+          <div>{blogs.message}</div>
+        )
+    )}
+  </div>
 
   return (
-    <div>
-        <div>{renderBlogs}</div>
-    </div>
+    <div>{renderBlogs}</div>
   )
 }
